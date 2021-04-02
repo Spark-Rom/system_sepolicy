@@ -1330,6 +1330,9 @@ allow system_server surfaceflinger_exec:file r_file_perms;
 # Allow init to set sysprop used to compute stats about userspace reboot.
 set_prop(system_server, userspace_reboot_log_prop)
 
+# App Lock
+add_service(system_server, applock_service); 
+
 # JVMTI agent settings are only readable from the system server.
 neverallow {
   domain
